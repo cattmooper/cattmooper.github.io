@@ -2,9 +2,9 @@
 layout: post
 title: Optimising your Fantasy Premier League team with Linear Optimisation
 subtitle: Exploring optimisation for FPL to get the best out of your team
-cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/thumb.png
-share-img: /assets/img/path.jpg
+# cover-img: /assets/img/path.jpg
+# thumbnail-img: /assets/img/thumb.png
+# share-img: /assets/img/path.jpg
 tags: [FPL,fantasy,premier,league,sports,optimisation]
 ---
 
