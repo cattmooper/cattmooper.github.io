@@ -5,10 +5,14 @@ subtitle: What do I offer?
 ---
 
 I'm Matt Cooper, and my professional experience looks like this:
-- Hold an MEng in Aerospace Engineering with a Year in Industry from the University of Sheffield
-- Experience as a consultant at one of the Big 4, working on a breadth of data-heavy projects
-- Moved into the public sector, where I first worked as a data scientist in regulation
-- Currently working as a Senior Data Scientist for a government organisation
+
+:airplane: Hold an MEng in Aerospace Engineering with a Year in Industry from the University of Sheffield
+
+:office: Experience as a consultant at one of the Big 4, working on a breadth of data-heavy projects
+
+:male_detective: Moved into the public sector, where I first worked as a data scientist in regulation
+
+:classical_building: Currently working as a Senior Data Scientist for a government organisation
 
 However, this website is here to showcase what I do outside of work. I'm passionate about data, and specifically how it can be applied in sports, particularly football. At the time of writing, advanced analytics in football is a burgeoning area which is beginning to catch up to the levels of usage of analytics in American sports.
 
