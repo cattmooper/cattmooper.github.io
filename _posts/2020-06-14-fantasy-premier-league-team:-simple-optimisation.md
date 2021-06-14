@@ -1,3 +1,14 @@
+---
+layout: post
+title: Optimising your Fantasy Premier League team with Linear Optimisation
+subtitle: Exploring optimisation for FPL to get the best out of your team
+cover-img: /assets/img/path.jpg
+thumbnail-img: /assets/img/thumb.png
+share-img: /assets/img/path.jpg
+tags: [FPL,fantasy,premier,league,sports,optimisation]
+---
+
+
 # Fantasy Premier League - Team Optimisation
 
 #### This piece of work sought to give a way to try and remove emotion and bias from decisions about your Fantasy Premier League team. This is achieved by using past performance as an indicator of future success and apply basic optimisation to choose the best combination of players to fit this.
