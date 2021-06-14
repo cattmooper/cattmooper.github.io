@@ -16,7 +16,7 @@ A simple approach to this might be something like taking a common metric in FPL 
 - It also limits the capability of a fully optimal solution to be found. If a player which is valued highly is very expensive, a saving will need to be made later on in the team, whereas it’s possible that some combination of more middle priced assets could actually yield more points in total.
 
 <p align="center">
-  <img src="/assets/img/fpl-opt/linear_opt_image.png" />
+  <img src="/assets/img/linear_opt_image.png" />
 </p>
 
 Python has a package called PuLP which allows exactly the sort of Linear Optimisation that I’m looking for to be done. I was inspired to turn to this approach after reading a very similar approach applied to [Fantasy (American) Football](https://medium.com/ml-everything/using-python-and-linear-programming-to-optimize-fantasy-football-picks-dc9d1229db81) by ml-everything. This uses PuLP to find the optimum player combination to maximise points returned. I have developed this idea further to maximise a simple metric which includes the weighted sum of points from the 2019/20 and 2020/21 seasons, which is then weighted again using the Fixture Difficulty Rating (FDR) for the next X games. The idea of this is to include:
@@ -36,7 +36,7 @@ Next up is defining my function for identifying the difficulty of the next X mat
 ### ADD IN EXPLANATION OF HOW THE SCORE IS WORKED OUT
 
 <p align="center">
-  <img src="/assets/img/fpl-opt/team_data_snapshot.png" />
+  <img src="/assets/img/team_data_snapshot.png" />
 </p>
 
 ## Identifying the optimal solution
@@ -47,7 +47,7 @@ The first step towards the optimisation is probably a slight move away from prod
 Running this script gives us some basic information about what the optimiser has left to work with:
 
 <p align="center">
-  <img src="/assets/img/fpl-opt/param_updates.png" />
+  <img src="/assets/img/param_updates.png" />
 </p>
 
 To solve the optimisation problem, a similar approach to ml-everything was used to establish a PuLP maximisation problem, constrained by the budget and the position counts required in FPL. This is then solved to find the best combination of players to get the highest sum of our metric:
@@ -56,26 +56,26 @@ To solve the optimisation problem, a similar approach to ml-everything was used 
 If running this through Jupyter Notebook, you’ll see some information about the how the solver has tackled the problem, including whether an optimal solution has been reached. As this is a pretty straightforward problem, I would always expect a optimum to be found, unless you add additional constraints which complicate the problem further. With our problem solved, it’d now be good to see what it’s found!
 
 <p align="center">
-  <img src="/assets/img/fpl-opt/optimal_team.png" />
+  <img src="/assets/img/optimal_team.png" />
 </p>
 
 From this print we can see the team selected, the budget leftover (in case the algorithm manages to find an optimal solution without using up all our cash) and the sum of the metric values. This sum doesn’t really mean anything, but allows teams to be compared. For example, if I prevent any players from being forced to be included the team becomes:
 
 <p align="center">
-  <img src="/assets/img/fpl-opt/5_game_window_team.png" />
+  <img src="/assets/img/5_game_window_team.png" />
 </p>
 
 Additionally, the number of games being considered to find the FDR sum can be altered. When looking at a 10 game horizon, the optimal team becomes:
 
 <p align="center">
-  <img src="/assets/img/fpl-opt/10_game_window_team.png" />
+  <img src="/assets/img/10_game_window_team.png" />
 </p>
 
 This team so far this season has scored 289 points, so clearly not a bad choice, although I’m sure most people can choose a high scoring team with the benefit of hindsight!
 Overall, the choices from these optimisations aren’t that surprising, but at times can be seen to be biased towards this season’s performance (as expected as the weighting for this season is much higher). If I change the metric to be a 50:50 split between 19/20 points and 20/21 points, the result becomes:
 
 <p align="center">
-  <img src="/assets/img/fpl-opt/even_weighting_team.png" />
+  <img src="/assets/img/even_weighting_team.png" />
 </p>
 
 This result highlights an issue with the algorithm in that it does not implement player number caps. This team has 4 Wolves players, which wouldn’t be permittable under FPL rules. This is an area for future development, but when using the 80/20 weighting this issue occurs less (although I expect it will become more common as the season goes on and one or two high-value teams emerge)
