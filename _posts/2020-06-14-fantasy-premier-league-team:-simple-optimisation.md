@@ -89,37 +89,39 @@ Where:
 - P20 is the number of points scored so far in the 20/21 season
 - SUM_FDR is the total fixture difficulty for the number of games configured by the user
 
+Applied across a cut of players, this produces the following:
 <p align="center">
   <img src="/assets/img/team_data_snapshot.png" />
 </p>
 
 ## Identifying the optimal solution
-With our metric created, the optimal combination of these assets can now be found. The first step is getting a DataFrame with just the essentials in, renamed for the optimisation script to use (renaming them here rather than earlier on allows different metrics to be used for the optimisation, such as value or raw points):
+With our metric created, the optimal combination of these assets can now be found. 
 
-The first step towards the optimisation is probably a slight move away from producing the most optimal answer. The metric produced above gives us a good picture of players who have played for both the 19/20 and 20/21 seasons but what about newly promoted teams or players who have joined teams in the transfer window? While a mitigation within the metric is yet to be produced, I wanted to be able to force players to be included in my optimal solution. This also extends to players who you think are essential fantasy picks, but that the optimised solution doesn’t choose.
+The first step towards the optimisation is probably a slight move away from producing the most optimal answer (or at least having the option not to!). The metric produced above gives us a good picture of players who have played for both the 19/20 and 20/21 seasons but what about newly promoted teams or players who have joined teams in the transfer window? Particularly early on in the season, when you might be much more heavily weighting last season's points totals, new transfers and promoted players will be heavily penalised, and therefore not included in the optimal team. To mitigate against this, I wanted to be able to force players to be included (or excluded if necessary) in my optimal solution. This could also be used to choose players who you think are essential fantasy picks, but that the optimised solution doesn’t choose for any reason.
 
-Running this script gives us some basic information about what the optimiser has left to work with:
+The way this is implemented, is by pulling out the chosen players, the sum of the metric that they add, and how they impact the budget. It's important that their cost is taken from the budget available to the optimiser, as well as their slot in the relevant position, so that the optimiser produces a solution which is applicable in combination with these players.
 
+Initialising the optimiser and forcing the inclusion of some players will make the optimiser give you some information about the choices you've made so far:
 <p align="center">
   <img src="/assets/img/param_updates.png" />
 </p>
 
-To solve the optimisation problem, a similar approach to ml-everything was used to establish a PuLP maximisation problem, constrained by the budget and the position counts required in FPL. This is then solved to find the best combination of players to get the highest sum of our metric:
+Now we can solve the problem! As mentioned before, I used PuLP to do this, and wanted to maximise my weighted points metric, constrained by the budget and the position counts required in FPL. This is then solved to find the best combination of players to get the highest sum of our metric:
 
 ## Results
-If running this through Jupyter Notebook, you’ll see some information about the how the solver has tackled the problem, including whether an optimal solution has been reached. As this is a pretty straightforward problem, I would always expect a optimum to be found, unless you add additional constraints which complicate the problem further. With our problem solved, it’d now be good to see what it’s found!
+When PuLP runs the optimisation, it'll give you details on the solving of the problem within the Jupyter Notebook command line window. It's a straightforward problem, so I'd usually expect this to be solved, unless incompitable requirements have been applied (i.e. forcing inclusion of players who's costs mean you can't choose enough players for your team). Initially, I asked for Trent Alexander-Arnold and Patrick Bamford to be forced to be included, and used a 5 gameweek window to sum the Fixture Difficult Ratings over. Once it's solved, you'll see the following:
 
 <p align="center">
   <img src="/assets/img/optimal_team.png" />
 </p>
 
-From this print we can see the team selected, the budget leftover (in case the algorithm manages to find an optimal solution without using up all our cash) and the sum of the metric values. This sum doesn’t really mean anything, but allows teams to be compared. For example, if I prevent any players from being forced to be included the team becomes:
+From this output, we can see the team selected, the budget leftover (in case the algorithm manages to find an optimal solution without using up all our cash) and the sum of the metric values. This sum doesn’t really mean anything at the moment, but allows teams to be compared when running multiple optimisations. For example, if I prevent any players from being forced to be included the team becomes:
 
 <p align="center">
   <img src="/assets/img/5_game_window_team.png" />
 </p>
 
-Additionally, the number of games being considered to find the FDR sum can be altered. When looking at a 10 game horizon, the optimal team becomes:
+Additionally, as I mentioned earlier the number of games being considered to find the FDR sum can be altered. When looking at a 10 game horizon, the optimal team becomes:
 
 <p align="center">
   <img src="/assets/img/10_game_window_team.png" />
