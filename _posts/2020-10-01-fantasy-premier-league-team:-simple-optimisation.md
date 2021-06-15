@@ -33,7 +33,7 @@ A simple approach to this might be something like taking a common metric in FPL 
 </p>
 
 <div align="center">
-**A visualisation of how linear optimisation chooses a solution.**
+<em>A visualisation of how linear optimisation chooses a solution.</em>
 </div>
 
 
