@@ -16,8 +16,8 @@ author: Matt Cooper
 navbar-links:
   About Me: "aboutme"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
+    - LinkedIn: "https://www.linkedin.com/in/matthewcooper19/"
+    - Twitter: "https://twitter.com/MooperCatt"
   Author's home: "https://deanattali.com"
 
 # --- Logo --- #
@@ -87,7 +87,7 @@ excerpt_length: 50
 feed_show_excerpt: true
 
 # Whether or not to show a list of tags below each post preview in the feed page
-feed_show_tags: true
+feed_show_tags: false
 
 # Add a search button to the navbar
 post_search: true
