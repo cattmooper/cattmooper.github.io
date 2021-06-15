@@ -30,8 +30,12 @@ A simple approach to this might be something like taking a common metric in FPL 
 
 <p align="center">
   <img src="/assets/img/linear_opt_image.png" />
-  <em>A visualisation of how linear optimisation chooses a solution.</em>
 </p>
+
+<div align="center">
+**A visualisation of how linear optimisation chooses a solution.**
+</div>
+
 
 Python has a package called PuLP which allows exactly the sort of linear optimisation that I’m looking for to be done. I was inspired to turn to this approach after reading a very similar approach applied to [Fantasy (American) Football](https://medium.com/ml-everything/using-python-and-linear-programming-to-optimize-fantasy-football-picks-dc9d1229db81) by ml-everything. This uses PuLP to find the optimum player combination to maximise points returned. I have developed this idea further to maximise a simple metric which includes the weighted sum of points from the 2019/20 and 2020/21 seasons, which is then weighted again using the Fixture Difficulty Rating (FDR) for the next X games. The idea of this is to include:
 - Some historic understanding of how the player returned last season
