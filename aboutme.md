@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About me
+title: About Me
 subtitle: What do I offer?
 ---
 
