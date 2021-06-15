@@ -33,7 +33,7 @@ A simple approach to this might be something like taking a common metric in FPL 
 </p>
 
 <div align="center">
-<em>A visualisation of how linear optimisation chooses a solution.</em>
+<em>A visualisation of how linear optimisation chooses a solution. <a href="https://en.wikipedia.org/wiki/Linear_programming#/media/File:Linear_Programming_Feasible_Region.svg">Source</a></em>
 </div>
 
 
