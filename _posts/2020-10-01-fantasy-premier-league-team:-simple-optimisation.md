@@ -97,6 +97,9 @@ Applied across a cut of players, this produces the following:
 <p align="center">
   <img src="/assets/img/team_data_snapshot.png" />
 </p>
+<div align="center">
+<em>Premier League players sorted in ascending order by the Optimisation Metric ('opt_points_weighted_diff' in the image), with Fixture Difficulty Rating summed over a horizon of 5 games</em>
+</div>
 
 ## Identifying the optimal solution
 With our metric created, the optimal combination of these assets can now be found. 
@@ -109,6 +112,10 @@ Initialising the optimiser and forcing the inclusion of some players will make t
 <p align="center">
   <img src="/assets/img/param_updates.png" />
 </p>
+<div align="center">
+<em>Initial output of optimisation model</em>
+</div>
+
 
 Now we can solve the problem! As mentioned before, I used PuLP to do this, and wanted to maximise my weighted points metric, constrained by the budget and the position counts required in FPL. This is then solved to find the best combination of players to get the highest sum of our metric:
 
@@ -118,18 +125,27 @@ When PuLP runs the optimisation, it'll give you details on the solving of the pr
 <p align="center">
   <img src="/assets/img/optimal_team.png" />
 </p>
+<div align="center">
+<em>Optimal team, with some players force included, and a difficulty horizon of 5 games</em>
+</div>
 
 From this output, we can see the team selected, the budget leftover (in case the algorithm manages to find an optimal solution without using up all our cash) and the sum of the metric values. This sum doesn’t really mean anything at the moment, but allows teams to be compared when running multiple optimisations. For example, if I prevent any players from being forced to be included the team becomes:
 
 <p align="center">
   <img src="/assets/img/5_game_window_team.png" />
 </p>
+<div align="center">
+<em>Optimal team, with no players force included, and a difficulty horizon of 5 games</em>
+</div>
 
 Additionally, as I mentioned earlier the number of games being considered to find the FDR sum can be altered. When looking at a 10 game horizon, the optimal team becomes:
 
 <p align="center">
   <img src="/assets/img/10_game_window_team.png" />
 </p>
+<div align="center">
+<em>Optimal team, with no players force included, and a difficulty horizon of 10 games</em>
+</div>
 
 This team so far this season has scored 289 points, so clearly not a bad choice, although I’m sure most people can choose a high scoring team with the benefit of hindsight!
 Overall, the choices from these optimisations aren’t that surprising, but at times can be seen to be biased towards this season’s performance (as expected as the weighting for this season is much higher). If I change the metric to be a 50:50 split between 19/20 points and 20/21 points, the result becomes:
@@ -137,6 +153,9 @@ Overall, the choices from these optimisations aren’t that surprising, but at t
 <p align="center">
   <img src="/assets/img/even_weighting_team.png" />
 </p>
+<div align="center">
+<em>Optimal team, with no players force included, and a difficulty horizon of 10 games, and the Optimisation Metric weighting evenly balanced between current and previous seasons</em>
+</div>
 
 This result highlights an issue with the algorithm in that it does not implement player number caps. This team has 4 Wolves players, which wouldn’t be permittable under FPL rules. This is an area for future development, but when using the 80/20 weighting this issue occurs less (although I expect it will become more common as the season goes on and one or two high-value teams emerge)
 
