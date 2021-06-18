@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Exploring how well a Pass Completion Prediction model can work
-subtitle: A (unsuccessful) adventure into identifying whether a model can acheive acceptable accuracy for pass prediction
+subtitle: An (unsuccessful) adventure into identifying whether a model can acheive acceptable accuracy for pass prediction
 # cover-img: /assets/img/path.jpg
 # thumbnail-img: /assets/img/thumb.png
 # share-img: /assets/img/path.jpg
