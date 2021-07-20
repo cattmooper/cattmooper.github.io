@@ -78,11 +78,19 @@ The model training stage here is an example of a classic supervised ML model sel
 - Random Forest
 - XGBoost
 
-The results of which looked like this:
+Each of these models was cross-validated with 5 folds to try and get a robust impression of classifier performance. Each of these classifiers was tried with the default hyperparameters with fine-tuning to occur later
+
+The results of this search were as follows:
 | Logistic Regression	| Support Vector Classifier	| Decision Tree | Random Forest	| XGBoost	| Best Performing Classifer |
-|------|------|------|------|------|------|
+|------|------|------|------|------|------|------|
 | Precision | 0.897975	| 0.889951	| 0.919356	| 0.920504	| 0.921915	| XGBoost |
 | Recall	| 0.974013	| 0.983700	| 0.913391	| 0.966392	| 0.969396	| Support Vector Classifier |
 | F1 Score	| 0.934442	| 0.934476	| 0.916358	| 0.942883	| 0.945053	| XGBoost |
+
+Perhaps unsurprisingly XGBoost performs best in both Precision and F1 Score, and is third placed for Recall. We'll move forward with XGBoost, especially given its known pedigree.
+
+The final training step before assessing model performance is then a hyperparameter search. This was carried out in two stages:
+- An initial Stratified 3-fold Grid Search to determine learning rate and number of estimators - this identified X estimators and a learning rate of N as being the best approach
+- A second Stratified 3-fold Randomized Search over a number of other hyperparameters (min_child_weight, gamma, subsample, colsample_bytree, max_depth) with learning rate and number of estimators fixed at the values found in the first search. This method is preferred as it helps identify the most important hyperparameters first and then gets the best out of them with tweaks on the additional variables.
 
 
