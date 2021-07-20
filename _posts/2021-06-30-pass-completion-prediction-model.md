@@ -68,8 +68,21 @@ A field which was debated for engineering was the under_pressure field, however 
 
 This check is clearly not exhaustive, but gives an indication that the under_pressure field has been constructed in a similar way to how it would be manually generated otherwise. The converse was not checked (Under_pressure being False when no pressure joined) as there can be multiple related events which made this check more tricky. If there was concern about the quality of the field then additional checks would be possible, but were not warranted here.
 
+The final step is to prepare the data for train and test. In order to emulate how this type of approach might (with a massive emphasis on might) be used in a professional capacity by a club, the data split has been to use all seasons up to the most recent season available (2019/20) for training, and then test the model on 2019/20. This has an obvious benefit of giving the model more data to train on but means that the robustness of the model should be checked as the test dataset is smaller than ideally. Ultimately this is a simple experiment, so this split setup will work fine for these purposes.
 
+## Model training
+The model training stage here is an example of a classic supervised ML model selection approach. A range of supervised classifiers were trialled, including:
+- Logistic Regression
+- Linear SVC
+- Decision Tree
+- Random Forest
+- XGBoost
 
-
+The results of which looked like this:
+| Logistic Regression	| Support Vector Classifier	| Decision Tree | Random Forest	| XGBoost	| Best Performing Classifer |
+|------|------|------|------|------|------|
+| Precision | 0.897975	| 0.889951	| 0.919356	| 0.920504	| 0.921915	| XGBoost |
+| Recall	| 0.974013	| 0.983700	| 0.913391	| 0.966392	| 0.969396	| Support Vector Classifier |
+| F1 Score	| 0.934442	| 0.934476	| 0.916358	| 0.942883	| 0.945053	| XGBoost |
 
 
