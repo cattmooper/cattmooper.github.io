@@ -82,7 +82,7 @@ Each of these models was cross-validated with 5 folds to try and get a robust im
 
 The results of this search were as follows:
 | Logistic Regression	| Support Vector Classifier	| Decision Tree | Random Forest	| XGBoost	| Best Performing Classifer |
-|------|------|------|------|------|------|------|
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | Precision | 0.897975	| 0.889951	| 0.919356	| 0.920504	| 0.921915	| XGBoost |
 | Recall	| 0.974013	| 0.983700	| 0.913391	| 0.966392	| 0.969396	| Support Vector Classifier |
 | F1 Score	| 0.934442	| 0.934476	| 0.916358	| 0.942883	| 0.945053	| XGBoost |
