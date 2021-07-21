@@ -12,6 +12,8 @@ tags: [sports analytics, football, xgboost, classification, supervised learning]
 # Exploration of whether Pass Completion can be successfully predicted
 Pass completion is inherently uncertain with many factors outside of a passer's sheer ability affecting whether or not the ball reaches an intended target. I wanted to investigate how well pass completion can be predicted from a minimal set of variables, to understand whether an ML algorithm can identify factors which are important for passing compared to factors which are traditionally prioritised.
 
+As we'll see as we progress through the data, and by sheer logic, completed passes outnumber incomplete passes. For this reason, the classifier built will try and predict an incomplete pass. The classifier will then be examined to identify features which are important to a pass failing and the model will be used to identify players who are outperforming their expected pass completion rate1
+
 ## Data
 [Add statsbomb logo]
 The data used here is taken from Statsbomb, and in particular I've focussed on the Messi biographical dataset. This dataset includes every single game that Messi has played in in La Liga, from 2004 to present, comprising 459 matches and about 480,000 passes. 
@@ -35,6 +37,8 @@ To make my problem a binary classification, I adapted the Pass Outcome field to 
 - Unknown were removed to ensure a clean division between Success and Unsuccessful. Unknown outcome is indicative of some data quality issue/ambiguity, which wouldn't be helpful for the model
 
 With this encoding in place, the split of the data is more clear: there's about 450,000 passes left, with about 395,000 a success, and about 55,000 incomplete passes overall. This represnts a split of about 15% incomplete to 85% complete, which while not enormously problematic, needs consideration if only in the performance metrics selected to assess the model.
+
+As mentioned at the beginning, the incomplete passes are the positive minority class and the complete passes are the negative majority class.
 
 Before moving onto training the model, feature selection needed to take place as the Statsbomb data included a variety of fields many of which are not relevant for passing. The fields selected to train the model on were:
 - position_name
@@ -68,7 +72,9 @@ A field which was debated for engineering was the under_pressure field, however 
 
 This check is clearly not exhaustive, but gives an indication that the under_pressure field has been constructed in a similar way to how it would be manually generated otherwise. The converse was not checked (Under_pressure being False when no pressure joined) as there can be multiple related events which made this check more tricky. If there was concern about the quality of the field then additional checks would be possible, but were not warranted here.
 
-The final step is to prepare the data for train and test. In order to emulate how this type of approach might (with a massive emphasis on might) be used in a professional capacity by a club, the data split has been to use all seasons up to the most recent season available (2019/20) for training, and then test the model on 2019/20. This has an obvious benefit of giving the model more data to train on but means that the robustness of the model should be checked as the test dataset is smaller than ideally. Ultimately this is a simple experiment, so this split setup will work fine for these purposes.
+The final step is to prepare the data for train and test. For this initial model train and test, a 70/30 train test split was used. This was achieved by splitting on discrete seasons, so 2004/05 to 2015/16 was used as the training set, and 2016/17-2019/20 was the testing set. This achieved 69/31 train test split. Later, the modelling will explore the use of training on all but the most recent seasons, and testing on the most recent season to emulate how this type of approach might (with a massive emphasis on might) be used in a professional capacity by a club.
+
+[ADD IN SCREENSHOT OF THE ROLLING COUNT OF EVENTS ACROSS SEASONS]
 
 ## Model training
 The model training stage here is an example of a classic supervised ML model selection approach. A range of supervised classifiers were trialled, including:
@@ -94,4 +100,11 @@ The final training step before assessing model performance is then a hyperparame
 - An initial Stratified 3-fold Grid Search to determine learning rate and number of estimators - this identified X estimators and a learning rate of N as being the best approach
 - A second Stratified 3-fold Randomized Search over a number of other hyperparameters (min_child_weight, gamma, subsample, colsample_bytree, max_depth) with learning rate and number of estimators fixed at the values found in the first search. This method is preferred as it helps identify the most important hyperparameters first and then gets the best out of them with tweaks on the additional variables.
 
+With these two hyperparameter searches carried out, the final predictive model can be trained. It's performance after a looks like this:
 
+with the Receiver Operating Characteristic looking like this:
+[ADD ROC CURVE IMAGE]
+
+
+
+The final step is to prepare the data for train and test. In order to emulate how this type of approach might (with a massive emphasis on might) be used in a professional capacity by a club, the data split has been to use all seasons up to the most recent season available (2019/20) for training, and then test the model on 2019/20. This has an obvious benefit of giving the model more data to train on but means that the robustness of the model should be checked as the test dataset is smaller than ideally. Ultimately this is a simple experiment, so this split setup will work fine for these purposes.
