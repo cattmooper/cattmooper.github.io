@@ -81,6 +81,7 @@ The model training stage here is an example of a classic supervised ML model sel
 Each of these models was cross-validated with 5 folds to try and get a robust impression of classifier performance. Each of these classifiers was tried with the default hyperparameters with fine-tuning to occur later
 
 The results of this search were as follows:
+
 | Metric | Logistic Regression	| Support Vector Classifier	| Decision Tree | Random Forest	| XGBoost	| Best Performing Classifer |
 | :------ | :------ | :------ | :------ | :------ | :------ | :------ |
 | Precision | 0.897975	| 0.889951	| 0.919356	| 0.920504	| 0.921915	| XGBoost |
