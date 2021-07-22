@@ -83,7 +83,12 @@ This check is clearly not exhaustive, but gives an indication that the under_pre
 
 The final step is to prepare the data for train and test. For this initial model train and test, a 70/30 train test split was used. This was achieved by splitting on discrete seasons, so 2004/05 to 2015/16 was used as the training set, and 2016/17-2019/20 was the testing set. This achieved 69/31 train test split. Later, the modelling will explore the use of training on all but the most recent seasons, and testing on the most recent season to emulate how this type of approach might (with a massive emphasis on might) be used in a professional capacity by a club.
 
-[ADD IN SCREENSHOT OF THE ROLLING COUNT OF EVENTS ACROSS SEASONS]
+<p align="center">
+  <img src="/assets/img/cumulative_season_events.png" />
+</p>
+<div align="center">
+<em>An extension of the bar chart with counts of passes by season above, with a cumulative sum line added to illustrate the point at which various train/test splits could be taken</em>
+</div>
 
 ## Model training
 The model training stage here is an example of a classic supervised ML model selection approach. A range of supervised classifiers were trialled, including:
