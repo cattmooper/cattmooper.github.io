@@ -118,6 +118,8 @@ These results are OK, but the model has poor precision for unsuccessful passes. 
 
 We can examine the Precision Recall curve to find out more about performance of our model and where current performance sits:
 
+check size change
+
 <p align="center">
   <img src="/assets/img/prcurve.png" />
 </p>
