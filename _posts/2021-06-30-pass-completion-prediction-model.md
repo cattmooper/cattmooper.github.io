@@ -153,11 +153,11 @@ The value which gives roughly equal precision and recall is a threshold of 0.2, 
 
 So precision and recall have been hauled up to a slightly more palatable 0.6. No further attempts 
 
-### Drawing some insight
-## Feature importance
+## Drawing some insight
+### Feature importance
 We can look at the features which the model has determined to be the most important for predicting an incomplete pass. 
 
-## Player analysis
+### Player analysis
 So how can the model be used to assess player performance? This post won't go into huge detail or attempt anything too complex, but one way that performance can be validated is by comparing actual passing performance to predicted passing performance. This of course comes with the fairly significant caveat that the model's performance isn't actually that good, so the conclusions it draws are likely to be flawed. In any case, it's an interesting exercise to see how these types of models can be applied in a similar utility to that of xG models.
 
 
