@@ -15,7 +15,11 @@ Pass completion is inherently uncertain with many factors outside of a passer's 
 As we'll see as we progress through the data, and by sheer logic, completed passes outnumber incomplete passes. For this reason, the classifier built will try and predict an incomplete pass. The classifier will then be examined to identify features which are important to a pass failing and the model will be used to identify players who are outperforming their expected pass completion rate1
 
 ## Data
-[Add statsbomb logo]
+
+<p align="center">
+  <img src="/assets/img/SB_Regular.png" />
+</p>
+
 The data used here is taken from Statsbomb, and in particular I've focussed on the Messi biographical dataset. This dataset includes every single game that Messi has played in in La Liga, from 2004 to present, comprising 459 matches and about 480,000 passes. 
 
 [ADD HEATMAP/PASSMAP of all passes]
@@ -113,7 +117,10 @@ With these two hyperparameter searches carried out, the final predictive model c
 These results are OK, but the model has poor precision for unsuccessful passes. This means that its poor at predicting positives (i.e. unsuccessful passes) which will mean that the model will underestimate the number of incomplete attempts. Otherwise, performance is passable, but not excellent. The above table also highlights the perils of performance metric selection, with the accuracy reported at 83% and weighted average F1-score at 85%, both due to the fact that the negative class is much larger than the positive.
 
 We can examine the Precision Recall curve to find out more about performance of our model and where current performance sits:
-[ADD PR CURVE IMAGE]
+
+<p align="center">
+  <img src="/assets/img/prcurve.png" />
+</p>
 
 The model current has about 0.4 precision and 0.8 recall, so from the ROC its clear that we aren't at the optimum balance between the two. To aleviate this, and produce a slightly more robust performance, the classification threshold for the model was tweaked. The classification threshold is the point above which the model determines a data point to be in the positive class. By default this is set to 0.5, so a number of alternative values were tried between 0.2 and 0.8.
 
