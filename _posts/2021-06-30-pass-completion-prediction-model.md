@@ -146,7 +146,7 @@ The value which gives roughly equal precision and recall is a threshold of 0.2, 
 | :-- | :-- | :-- | :-- | :-- |
 | Successful | 0.94  | 0.95 | 0.95 | 122517 |
 | Unsuccessful | 0.60 | 0.59 | 0.59 | 16746 |
-| Metric | | | | |
+| Metric | :-- | :-- | :-- | :-- |
 | Accuracy | | | 0.90 | 139263 |
 | Macro Avg | 0.77 | 0.77 | 0.77 | 139263 |
 | Weighted Avg | 0.90 | 0.90 | 0.90 | 139263 |
