@@ -38,12 +38,18 @@ The data increases fairly incrementally from 2004/05 to 2006/07 when Messi becam
 ## Cleaning up the place
 Statsbomb data is pretty clean out of the box, and really the main work is re-structuring it into a format that I can use for a classification problem. The target variable to predict is the Pass Outcome, which in Statsbomb data is pre-coded, making our lives much easier.
 
-[Add bar chart/pie chart showing distribution of outcome]
-
 To make my problem a binary classification, I adapted the Pass Outcome field to either be Success (pretty self explanatory) or Unsuccessful, which encapsulated Incomplete and Out passes. I discarded Injury Clearance, Pass Offside and Unknown for a range of reasons:
 - Injury Clearance is a deliberately failed pass (and there's a very small number of them, 8) so these were discarded to prevent appearing as noise. 
 - Pass Offside are successful passes where the receiver is positioned incorrectly relative to defensive opponents. I wasn't confident the model would appreciate the nuance of this so removed from consideration
 - Unknown were removed to ensure a clean division between Success and Unsuccessful. Unknown outcome is indicative of some data quality issue/ambiguity, which wouldn't be helpful for the model
+
+<p align="center">
+  <img src="/assets/img/pass_outcome_pie.png" />
+</p>
+<div align="center">
+<em>Donut chart showing pass outcome by %. The values in To Be Removed were discarded following this step</em>
+</div>
+
 
 With this encoding in place, the split of the data is more clear: there's about 450,000 passes left, with about 395,000 a success, and about 55,000 incomplete passes overall. This represnts a split of about 15% incomplete to 85% complete, which while not enormously problematic, needs consideration if only in the performance metrics selected to assess the model.
 
