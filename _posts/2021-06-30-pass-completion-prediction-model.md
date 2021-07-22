@@ -126,13 +126,14 @@ The model current has about 0.4 precision and 0.8 recall, so from the ROC its cl
 
 The value which gives roughly equal precision and recall is a threshold of 0.2, substantially lower than the default. With classification threshold set to two, the model performance becomes:
 
-| | precision | recall | f1-score | sample count |
+| Class | Precision | Recall | F1-Score | Sample Count |
 | :-- | :-- | :-- | :-- | :-- |
-| successful | 0.94  | 0.95 | 0.95 | 122517 |
-| unsuccessful | 0.60 | 0.59 | 0.59 | 16746 |
-| accuracy | | | 0.90 | 139263 |
-| macro avg | 0.77 | 0.77 | 0.77 | 139263 |
-| weighted avg | 0.90 | 0.90 | 0.90 | 139263 |
+| Successful | 0.94  | 0.95 | 0.95 | 122517 |
+| Unsuccessful | 0.60 | 0.59 | 0.59 | 16746 |
+| Metric | | | | |
+| Accuracy | | | 0.90 | 139263 |
+| Macro Avg | 0.77 | 0.77 | 0.77 | 139263 |
+| Weighted Avg | 0.90 | 0.90 | 0.90 | 139263 |
 
 So precision and recall have been hauled up to a slightly more palatable 0.6. No further attempts 
 
