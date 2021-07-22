@@ -28,7 +28,9 @@ The data used is clearly centred on Barcelona, but I wanted to limit this study 
 
 The data increases fairly incrementally from 2004/05 to 2006/07 (CHECK THESE DATES) when Messi became a first team mainstay (and therefore more games are included each season), peaking at about 38,000 passes per season. 
 
-[Add nice line plot/bar chart of passes over seasons
+<p align="center">
+  <img src="/assets/img/rolling_season_passes.png" />
+</p>
 
 ## Cleaning up the place
 Statsbomb data is pretty clean out of the box, and really the main work is re-structuring it into a format that I can use for a classification problem. The target variable to predict is the Pass Outcome, which in Statsbomb data is pre-coded, making our lives much easier.
