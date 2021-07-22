@@ -100,13 +100,34 @@ The final training step before assessing model performance is then a hyperparame
 - An initial Stratified 3-fold Grid Search to determine learning rate and number of estimators - this identified X estimators and a learning rate of N as being the best approach
 - A second Stratified 3-fold Randomized Search over a number of other hyperparameters (min_child_weight, gamma, subsample, colsample_bytree, max_depth) with learning rate and number of estimators fixed at the values found in the first search. This method is preferred as it helps identify the most important hyperparameters first and then gets the best out of them with tweaks on the additional variables.
 
-With these two hyperparameter searches carried out, the final predictive model can be trained. It's performance after a Stratified 7-Fold cross validationlooks like this:
+With these two hyperparameter searches carried out, the final predictive model can be trained. After training, performance looks like this:
 
-with the Receiver Operating Characteristic looking like this:
-[ADD ROC CURVE IMAGE]
+| | precision | recall | f1-score | sample count |
+| :-- | :-- | :-- | :-- | :-- |
+| successful | 0.97  | 0.83 | 0.89 | 122517 |
+| unsuccessful | 0.40 | 0.83 | 0.54 | 16746 |
+| accuracy | | | 0.83 | 139263 |
+| macro avg | 0.69 | 0.83 | 0.72 | 139263 |
+| weighted avg | 0.90 | 0.83 | 0.85 | 139263 |
 
-To see whether any extra performance be squeezed out of the model, the classification threshold for the model was tweaked. The classification threshold is the point above which the model determines a data point to be in the positive class. By default this is set to 0.5, so a number of alternative values were tried between 0.25 and 0.75.
+These results are OK, but the model has poor precision for unsuccessful passes. This means that its poor at predicting positives (i.e. unsuccessful passes) which will mean that the model will underestimate the number of incomplete attempts. Otherwise, performance is passable, but not excellent. The above table also highlights the perils of performance metric selection, with the accuracy reported at 83% and weighted average F1-score at 85%, both due to the fact that the negative class is much larger than the positive.
 
+We can examine the Precision Recall curve to find out more about performance of our model and where current performance sits:
+[ADD PR CURVE IMAGE]
+
+The model current has about 0.4 precision and 0.8 recall, so from the ROC its clear that we aren't at the optimum balance between the two. To aleviate this, and produce a slightly more robust performance, the classification threshold for the model was tweaked. The classification threshold is the point above which the model determines a data point to be in the positive class. By default this is set to 0.5, so a number of alternative values were tried between 0.2 and 0.8.
+
+The value which gives roughly equal precision and recall is a threshold of 0.2, substantially lower than the default. With classification threshold set to two, the model performance becomes:
+
+| | precision | recall | f1-score | sample count |
+| :-- | :-- | :-- | :-- | :-- |
+| successful | 0.94  | 0.95 | 0.95 | 122517 |
+| unsuccessful | 0.60 | 0.59 | 0.59 | 16746 |
+| accuracy | | | 0.90 | 139263 |
+| macro avg | 0.77 | 0.77 | 0.77 | 139263 |
+| weighted avg | 0.90 | 0.90 | 0.90 | 139263 |
+
+So precision and recall have been hauled up to a slightly more palatable 0.6. No further attempts 
 
 ### Drawing some insight
 ## Feature importance
