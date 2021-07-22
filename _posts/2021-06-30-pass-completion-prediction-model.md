@@ -26,11 +26,14 @@ The data used here is taken from Statsbomb, and in particular I've focussed on t
 
 The data used is clearly centred on Barcelona, but I wanted to limit this study to a single league so that factors like style of play, disparities in capability of opponents, etc. were consistent across the full dataset. Using a single division made it more consistent than it might have been using multiple leagues/competitions. An extension of this work might be to understand whether generalising across all passes held in the Statsbomb dataset might produce a more robust model, but that is out of scope for here!
 
-The data increases fairly incrementally from 2004/05 to 2006/07 (CHECK THESE DATES) when Messi became a first team mainstay (and therefore more games are included each season), peaking at about 38,000 passes per season. 
+The data increases fairly incrementally from 2004/05 to 2006/07 when Messi became a first team mainstay (and therefore more games are included each season), plateauing at about 38,000 passes per season. 
 
 <p align="center">
   <img src="/assets/img/rolling_season_passes.png" />
 </p>
+<div align="center">
+<em>Bar chart of total passes in each season of the Statsbomb Messi biographical data between 2004/05 and 2019/20</em>
+</div>
 
 ## Cleaning up the place
 Statsbomb data is pretty clean out of the box, and really the main work is re-structuring it into a format that I can use for a classification problem. The target variable to predict is the Pass Outcome, which in Statsbomb data is pre-coded, making our lives much easier.
