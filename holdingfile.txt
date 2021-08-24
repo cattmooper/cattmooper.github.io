@@ -1,0 +1,9 @@
+## Drawing some insight
+### Feature importance
+We can look at the features which the model has determined to be the most important for predicting an incomplete pass. 
+
+### Player analysis
+So how can the model be used to assess player performance? This post won't go into huge detail or attempt anything too complex, but one way that performance can be validated is by comparing actual passing performance to predicted passing performance. This of course comes with the fairly significant caveat that the model's performance isn't actually that good, so the conclusions it draws are likely to be flawed. In any case, it's an interesting exercise to see how these types of models can be applied in a similar utility to that of xG models.
+
+
+The final step is to prepare the data for train and test. In order to emulate how this type of approach might (with a massive emphasis on might) be used in a professional capacity by a club, the data split has been to use all seasons up to the most recent season available (2019/20) for training, and then test the model on 2019/20. This has an obvious benefit of giving the model more data to train on but means that the robustness of the model should be checked as the test dataset is smaller than ideally. Ultimately this is a simple experiment, so this split setup will work fine for these purposes.
