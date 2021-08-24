@@ -22,8 +22,6 @@ As we'll see as we progress through the data, and by sheer logic, completed pass
 
 The data used here is taken from Statsbomb, and in particular I've focussed on the Messi biographical dataset. This dataset includes every single game that Messi has played in in La Liga, from 2004 to present, comprising 459 matches and about 480,000 passes. 
 
-[ADD HEATMAP/PASSMAP of all passes]
-
 The data used is clearly centred on Barcelona, but I wanted to limit this study to a single league so that factors like style of play, disparities in capability of opponents, etc. were consistent across the full dataset. Using a single division made it more consistent than it might have been using multiple leagues/competitions. An extension of this work might be to understand whether generalising across all passes held in the Statsbomb dataset might produce a more robust model, but that is out of scope for here!
 
 The data increases fairly incrementally from 2004/05 to 2006/07 when Messi became a first team mainstay (and therefore more games are included each season), plateauing at about 38,000 passes per season. 
@@ -153,12 +151,7 @@ The value which gives roughly equal precision and recall is a threshold of 0.2, 
 
 So precision and recall have been hauled up to a slightly more palatable 0.6. No further attempts 
 
-## Drawing some insight
-### Feature importance
-We can look at the features which the model has determined to be the most important for predicting an incomplete pass. 
+## Conclusion
+This represents an initial exploration into a pass completion model. The next step would be to explore how this model identifies good and bad passers of the ball, which is what the next post will look at.
 
-### Player analysis
-So how can the model be used to assess player performance? This post won't go into huge detail or attempt anything too complex, but one way that performance can be validated is by comparing actual passing performance to predicted passing performance. This of course comes with the fairly significant caveat that the model's performance isn't actually that good, so the conclusions it draws are likely to be flawed. In any case, it's an interesting exercise to see how these types of models can be applied in a similar utility to that of xG models.
-
-
-The final step is to prepare the data for train and test. In order to emulate how this type of approach might (with a massive emphasis on might) be used in a professional capacity by a club, the data split has been to use all seasons up to the most recent season available (2019/20) for training, and then test the model on 2019/20. This has an obvious benefit of giving the model more data to train on but means that the robustness of the model should be checked as the test dataset is smaller than ideally. Ultimately this is a simple experiment, so this split setup will work fine for these purposes.
+Thanks for reading!
