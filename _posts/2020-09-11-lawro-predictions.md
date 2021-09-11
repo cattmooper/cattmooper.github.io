@@ -1,4 +1,15 @@
-## Lawrenson's Predictions
+---
+layout: post
+title: 2-0? What is Lawro thinking?
+subtitle: Analysing Mark Lawrenson's BBC Sport English Premier League match predictions
+# cover-img: /assets/img/path.jpg
+# thumbnail-img: /assets/img/thumb.png
+# share-img: /assets/img/path.jpg
+tags: [football,visualisation]
+---
+
+
+# Lawrenson's Predictions
 
 Have you ever wondered if there's any rhyme or reason to the way an ex-professional footballer makes predictions about Premier League games? No, me neither, until I noticed something strange in a column on BBC sport...
 
