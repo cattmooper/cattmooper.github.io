@@ -24,7 +24,7 @@ While hypothesis might be a bit strong, the trend that we spotted was that Lawro
 The first check to do was to look at how actual match results are distributed.
 
 <p align="center">
-  <img src="raw_results.png" />
+  <img src="/assets/raw_results.png" />
 </p>
 
 <div align="center">
@@ -34,7 +34,7 @@ The first check to do was to look at how actual match results are distributed.
 For seasons 2010/11 to 2020/21, there's about 4000 games over the 10 seasons, with some dropping out as unfortunately Lawro doesn't do predictions if a game is rearranged after he's made a prediction (the most recent example being the games cancelled in December 2020 due to COVID). Of these, in the above plot we can see that, as you might expect, there's been a wide variety of results. To make it easier to analyse at the outset, if we standardise results we still get a wide variety.
 
 <p align="center">
-  <img src="standardised_results.png" />
+  <img src="/assets/standardised_results.png" />
 </p>
 
 <div align="center">
@@ -46,7 +46,7 @@ In terms of working out where the 2-0 hypothesis might stem from, the thing that
 Comparing that to a raw version of Lawro's predictions is striking
 
 <p align="center">
-  <img src="raw_predictions.png" />
+  <img src="/assets/raw_predictions.png" />
 </p>
 
 <div align="center">
@@ -57,7 +57,7 @@ Comparing that to a raw version of Lawro's predictions is striking
 And becomes even more so in the standardised version
 
 <p align="center">
-  <img src="standardised_predictions.png" />
+  <img src="/assets/standardised_predictions.png" />
 </p>
 
 <div align="center">
@@ -69,7 +69,7 @@ Firstly, clearly the range of predictions is must narrower, which is perhaps to 
 However, the real standout is the frequency of 2-0 predictions. This can be emphasised by looking at differential between actual and predicted result proportions for the results which Lawro has made predictions with
 
 <p align="center">
-  <img src="result_prediction_comparison.png" />
+  <img src="/assets/result_prediction_comparison.png" />
 </p>
 
 <div align="center">
@@ -81,7 +81,7 @@ This plot illustrates what has already been discussed in that Lawro over-predict
 Looking at the bars side-by-side, rather than the difference between them, we can see that Lawro really only favours a handful of results. when in reality the spread is much wider
 
 <p align="center">
-  <img src="result_prediction_comparison_bars.png" />
+  <img src="/assets/result_prediction_comparison_bars.png" />
 </p>
 
 <div align="center">
@@ -92,7 +92,7 @@ Looking at % distributions of outcomes rather than results, we can see that Lawr
 
 
 <p align="center">
-  <img src="outcome_%_plot.png" />
+  <img src="/assets/outcome_%_plot.png" />
 </p>
 
 <div align="center">
