@@ -155,6 +155,14 @@ When this is contrasted with the rates of other results over the years, the rise
 <em>Comparison of %s of actual and predicted 1-1s</em>
 </div>
 
+<p align="center">
+  <img src="/assets/img/result_proportion_lines_3-0.png" />
+</p>
+
+<div align="center">
+<em>Comparison of %s of actual and predicted 3-0s</em>
+</div>
+
 
 
 ### Focussing on specific teams
