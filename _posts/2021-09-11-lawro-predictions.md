@@ -92,7 +92,7 @@ Looking at % distributions of outcomes rather than results, we can see that Lawr
 
 
 <p align="center">
-  <img src="/assets/img/outcome_perc_plot.png" />
+  <img src="/assets/img/outcome_%_plot.png" />
 </p>
 
 <div align="center">
@@ -102,6 +102,58 @@ Looking at % distributions of outcomes rather than results, we can see that Lawr
 Overall Lawro seems to do much better with the outcome rather than the specific result. This largely seems to be down to the fact that he prefers to use 2-0, 1-1 and 2-1 as his outcomes almost exclusively. By taking this skewed approach, he limits his ability to correctly predict scores because results in football are much more evenly distributed than the way he predicts games.
 
 ### Historical performance
+The other avenue which can be visualised is how Lawro has changed his predictions over time, to see if current day Lawro has learnt anything in his 10 year journey of making Premier League predictions. To do this, the results have been standardised as discussed above. This means that 2-0 and 0-2 both go into the same bucket.
+
+The question on everyone's lips is "Has Lawro always absolutely loved a 2-0?"
+
+To get an overall view, the proportions of results over the past 11 seasons can be visualised:
+
+<p align="center">
+  <img src="/assets/img/results_area_plot.png" />
+</p>
+
+<div align="center">
+<em>Distribution of results from 2010/11 to 2019/20</em>
+</div>
+
+However, it's a bit difficult to see exactly what this says about Lawro's propensity to select 2-0, so focussing specifically on that outcome and well...
+
+<p align="center">
+  <img src="/assets/img/result_proportion_lines_2-0.png" />
+</p>
+
+<div align="center">
+<em>Comparison of %s of actual and predicted 2-0s</em>
+</div>
+
+The answer appears to be yes and no? While 2-0 has always been Lawro's bread and butter, in recent years he's only been increasing how much he uses 2-0 and is well on his way to double the volume of them used in his articles.
+
+
+When this is contrasted with the rates of other results over the years, the rise in 2-0s becomes more eyecatching
+
+<p align="center">
+  <img src="/assets/img/result_proportion_lines_0-0.png" />
+</p>
+
+<div align="center">
+<em>Comparison of %s of actual and predicted 0-0s</em>
+</div>
+
+<p align="center">
+  <img src="/assets/img/result_proportion_lines_1-0.png" />
+</p>
+
+<div align="center">
+<em>Comparison of %s of actual and predicted 1-0s</em>
+</div>
+
+<p align="center">
+  <img src="/assets/img/result_proportion_lines_1-1.png" />
+</p>
+
+<div align="center">
+<em>Comparison of %s of actual and predicted 1-1s</em>
+</div>
 
 
 
