@@ -14,7 +14,11 @@ I'm Matt Cooper, and my professional experience looks like this:
 
 - Currently working as a Senior Data Scientist for a government organisation
 
-However, this website is here to showcase what I do outside of work. I'm passionate about data, and specifically how it can be applied in sports, particularly football. At the time of writing, advanced analytics in football is a burgeoning area which is beginning to catch up to the levels of usage of analytics in American sports.
+Who am I?:
+- A keen Liverpool FC fan, hailing from the North West of England
+- An adopted San Francisco 49ers fan, inspired by the 2013 team of Smith and Kaepernick, following the highs and lows since.
+
+This website is here to showcase what I do outside of work. I'm passionate about data, and specifically how it can be applied in sports, particularly football (soccer) and American Football. At the time of writing, advanced analytics in football is a burgeoning area which is beginning to catch up to the levels of usage of analytics in American sports. I want to demonstrate my understanding of analytics on American Football data, and demonstrate how similar advances can be made in football.
 
 Ultimately I want this blog to show:
 - My capability in sports analytics, delivering some interesting insights where possible
