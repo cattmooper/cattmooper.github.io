@@ -165,6 +165,3 @@ The drastic fall of 1-1 predictions is interesting, particularly as this trend h
 
 
 ### Focussing on specific teams
-
-
-
