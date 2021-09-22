@@ -134,8 +134,8 @@ When this is contrasted with the rates of other results over the years, the rise
 Some results, such as 0-0 and 1-0, Lawro always has and (it seems) always will be uninterested in
 
 <p float="left">
-  <img src="/assets/img/result_proportion_lines_0-0.png" width="100" />
-  <img src="/assets/img/result_proportion_lines_1-0.png" width="100" /> 
+  <img src="/assets/img/result_proportion_lines_0-0.jpg" width="100" />
+  <img src="/assets/img/result_proportion_lines_1-0.jpg" width="100" /> 
 </p>
 
 
@@ -147,7 +147,7 @@ Some results, such as 0-0 and 1-0, Lawro always has and (it seems) always will b
 The drastic fall of 1-1 predictions is interesting, particularly as this trend has continued for the past 3 seasons
 
 <p align="center">
-  <img src="/assets/img/result_proportion_lines_1-1.png" />
+  <img src="/assets/img/result_proportion_lines_1-1.jpg" />
 </p>
 
 <div align="center">
@@ -155,7 +155,7 @@ The drastic fall of 1-1 predictions is interesting, particularly as this trend h
 </div>
 
 <p align="center">
-  <img src="/assets/img/result_proportion_lines_4-0.png" />
+  <img src="/assets/img/result_proportion_lines_4-0.jpg" />
 </p>
 
 <div align="center">
