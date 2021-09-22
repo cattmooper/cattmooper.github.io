@@ -22,6 +22,7 @@ So far, so unremarkable. Myself and a friend have followed these columns for a y
 While hypothesis might be a bit strong, the trend that we spotted was that Lawro seemed to disproportionately select 2-0 (in either direction) as his chosen outcome of games. This was noticeable to the point that each week after we began to suspect this was happening, it was reasonable to expect that about 50% of the games in any given week would have 2-0 in either direction.
 
 The first check to do was to look at how actual match results are distributed.
+
 <p align="center">
   <img src="/assets/img/raw_results.jpg" />
 </p>
@@ -153,6 +154,8 @@ The drastic fall of 1-1 predictions is interesting, particularly as this trend h
 <em>Comparison of %s of actual and predicted 1-1s</em>
 </div>
 
+And finally, something around 2017/18 season appears to precipitate a love for 4-0s
+
 <p align="center">
   <img src="/assets/img/result_proportion_lines_4-0.jpg" />
 </p>
@@ -161,6 +164,42 @@ The drastic fall of 1-1 predictions is interesting, particularly as this trend h
 <em>Comparison of %s of actual and predicted 4-0s</em>
 </div>
 
-
+The vast majority of these trends in results seem to be completely arbitrary and this article feels no closer to understanding why 2-0 is the result _du jour_ for Lawro.
 
 ### Focussing on specific teams
+
+To try and understand some of the logic behind any of the results, lets try and isolate the trigger for the (relatively) meteoric rise in 4-0 predictions.
+
+One way to do this is to look at % of predictions of 4-0s over the seasons for each team. While a visual might be nice for this, it's actually a futile, because 4-0 has only been predicted by Lawro 11 times in almost 4000 games
+
+| Fixture | Season | Date | Prediction | Result | 
+|Manchester City vs Fulham | 2020/21 | Matchday 11 (04/12/20) | 4-0 | 2-0 |
+|Manchester City vs Norwich City | 2019/20 | Matchday 38 (26/07/20) | 4-0 | 5-0 |
+|Manchester City vs AFC Bournemouth | 2019/20 | Matchday 36 (14/07/20) | 4-0 | 2-1 |
+|Manchester United vs AFC Bournemouth | 2019/20 | Matchday 33 (04/07/20) | 4-0 | 5-2 |
+|Manchester City vs Southampton | 2019/20 | Matchday 11 (02/11/19) | 4-0 | 2-1 |
+|Liverpool vs Huddersfield Town | 2018/19 | Matchday 36 (23/04/19) | 4-0 | 5-0 |
+|Manchester City vs Cardiff City | 2018/19 | Re-Arranged Matches (02/04/19) | 4-0 | 2-0 |
+|Manchester City vs Huddersfield Town | 2017/18 | Matchday 37 (04/05/18) | 4-0 | 0-0 |
+|Manchester City vs Watford | 2017/18 | Matchday 22 (01/01/18) | 4-0 | 3-1 |
+|Man City vs Swansea | 2014/15 | Matchday 12 (22/11/14) | 4-0 | 2-1 |
+|Man City vs Cardiff | 2013/14 | Matchday 22 (18/01/14) | 4-0 | 4-2 |
+
+It doesn't take much analysis to notice that 2017/18 and Manchester City is where he started using 2-0. It isn't that surprising that he'd guess that score, but it seems to have flicked a switch to say '4-0 is an OK thing to guess', despite 4-0 always having been a score which has occurred in football.
+
+
+Turning the attention back to the question of 2-0s, a visualisation probably would help here. Looking at 2-0 proportion for teams over the 11 seasons that there are in the data, the pattern is murky to say the least
+
+<p align="center">
+  <img src="/assets/img/team_wise_two_nil_predictions.jpg" />
+</p>
+
+<div align="center">
+<em>2-0 % trend for teams that have been in the Premier League over the last 11 seasons</em>
+</div>
+
+Interesting trends here include how Spurs have a significant uptick in 2-0s during Pochettino's reign, peaking in 2017/18 when Lawro predicted about 65% of their games to end in a 2-0 to Spurs. Similarly, Man United's saw a rise and fall over about the same time window along Mourinho's time in charge. Interestingly, Man City peaked in 2013/14, the year that they first won the Premier League.
+
+This plot appears to be an insight into who Lawro sees as 'rising teams', perhaps where emotion clouds judgement and preconceptions have a more substantial influence than they otherwise might. Sometimes, he correctly predicts rising teams (see Man City in 13/14 and Spurs from 14/15 to 17/18) but others are false starts, like the Man United rise from 15/16 to 17/18
+
+The overarching message here is that if you want to know what Lawro _really_ thinks, just look at who he is predicting to bag 2-0s week in, week out. Failing that, look at 2-1s, because they're practically 2-0s.
