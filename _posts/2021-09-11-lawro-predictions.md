@@ -129,23 +129,22 @@ However, it's a bit difficult to see exactly what this says about Lawro's propen
 The answer appears to be yes and no? While 2-0 has always been Lawro's bread and butter, in recent years he's only been increasing how much he uses 2-0 and is well on his way to double the volume of them used in his articles.
 
 
-When this is contrasted with the rates of other results over the years, the rise in 2-0s becomes more eyecatching
+When this is contrasted with the rates of other results over the years, the rise in 2-0s becomes more eyecatching, as not all results follow this path
 
-<p align="center">
-  <img src="/assets/img/result_proportion_lines_0-0.png" />
+Some results, such as 0-0 and 1-0, Lawro always has and (it seems) always will be uninterested in
+
+<p float="left">
+  <img src="/assets/img/result_proportion_lines_0-0.png" width="100" />
+  <img src="/assets/img/result_proportion_lines_1-0.png" width="100" /> 
 </p>
 
-<div align="center">
-<em>Comparison of %s of actual and predicted 0-0s</em>
-</div>
-
-<p align="center">
-  <img src="/assets/img/result_proportion_lines_1-0.png" />
-</p>
 
 <div align="center">
-<em>Comparison of %s of actual and predicted 1-0s</em>
+<em>Comparison of %s of actual and predicted 0-0s and 1-0s</em>
 </div>
+
+
+The drastic fall of 1-1 predictions is interesting, particularly as this trend has continued for the past 3 seasons
 
 <p align="center">
   <img src="/assets/img/result_proportion_lines_1-1.png" />
@@ -156,11 +155,11 @@ When this is contrasted with the rates of other results over the years, the rise
 </div>
 
 <p align="center">
-  <img src="/assets/img/result_proportion_lines_3-0.png" />
+  <img src="/assets/img/result_proportion_lines_4-0.png" />
 </p>
 
 <div align="center">
-<em>Comparison of %s of actual and predicted 3-0s</em>
+<em>Comparison of %s of actual and predicted 4-0s</em>
 </div>
 
 
