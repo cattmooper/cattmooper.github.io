@@ -91,7 +91,7 @@ Looking at % distributions of outcomes rather than results, we can see that Lawr
 
 
 <p align="center">
-  <img src="/assets/img/outcome_%_plot.jpg" />
+  <img src="/assets/img/outcome_perc_plot.jpg" />
 </p>
 
 <div align="center">
