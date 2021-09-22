@@ -24,7 +24,7 @@ While hypothesis might be a bit strong, the trend that we spotted was that Lawro
 The first check to do was to look at how actual match results are distributed.
 
 <p align="center">
-  <img src="/assets/img/raw_results.jpg" />
+  <img src="assets/img/raw_results.jpg" />
 </p>
 
 <div align="center">
