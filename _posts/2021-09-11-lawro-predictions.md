@@ -109,7 +109,7 @@ The question on everyone's lips is "Has Lawro always absolutely loved a 2-0?"
 To get an overall view, the proportions of results over the past 11 seasons can be visualised:
 
 <p align="center">
-  <img src="/assets/img/results_area_plot.jpg" />
+  <img src="/assets/img/results_area_plot.jpg" width = "2000"/>
 </p>
 
 <div align="center">
