@@ -22,7 +22,6 @@ So far, so unremarkable. Myself and a friend have followed these columns for a y
 While hypothesis might be a bit strong, the trend that we spotted was that Lawro seemed to disproportionately select 2-0 (in either direction) as his chosen outcome of games. This was noticeable to the point that each week after we began to suspect this was happening, it was reasonable to expect that about 50% of the games in any given week would have 2-0 in either direction.
 
 The first check to do was to look at how actual match results are distributed.
-
 <p align="center">
   <img src="/assets/img/raw_results.jpg" />
 </p>
