@@ -8,6 +8,8 @@ subtitle: An (unsuccessful) adventure into identifying whether a model can achei
 tags: [sports analytics, football, xgboost, classification, supervised learning]
 ---
 
+23/10/2021: This article was updated to include Multi-Layer Perceptron in the Model Comparison section, as well as to remove Player Position from the feature list, and to use Successful Passes as the positive class. This doesn't make any difference to metrics but helps with interpreting and talking about results.
+
 
 # Exploration of whether Pass Completion can be successfully predicted
 Pass completion is inherently uncertain with many factors outside of a passer's sheer ability affecting whether or not the ball reaches an intended target. I wanted to investigate how well pass completion can be predicted from a minimal set of variables, to understand whether an ML algorithm can identify factors which are important for passing compared to factors which are traditionally prioritised.
@@ -85,7 +87,7 @@ A field which was debated for engineering was the under_pressure field, however 
 
 This check is clearly not exhaustive, but gives an indication that the under_pressure field has been constructed in a similar way to how it would be manually generated otherwise. The converse was not checked (Under_pressure being False when no pressure joined) as there can be multiple related events which made this check more tricky. If there was concern about the quality of the field then additional checks would be possible, but were not warranted here.
 
-The final step is to prepare the data for train and test. For this initial model train and test, a 70/30 train test split was used. This was achieved by splitting on discrete seasons, so 2004/05 to 2015/16 was used as the training set, and 2016/17-2019/20 was the testing set. This achieved 69/31 train test split. Later, the modelling will explore the use of training on all but the most recent seasons, and testing on the most recent season to emulate how this type of approach might (with a massive emphasis on might) be used in a professional capacity by a club.
+The final step is to prepare the data for train and test. For this initial model train and test, a 70/30 train test split was used. In the original version of this article, this was achieved by splitting on discrete seasons, so 2004/05 to 2015/16 was used as the training set, and 2016/17-2019/20 was the testing set. This achieved 69/31 train test split. However after some feedback a random stratified approach was used to get an even mix of all years data in training and test, to improve model and results robustness. This gave an exact 70/30 split.
 
 <p align="center">
   <img src="/assets/img/cumulative_season_events.png" />
@@ -106,11 +108,11 @@ Each of these models was cross-validated with 5 folds to try and get a robust im
 
 The results of this search were as follows:
 
-| Metric | Logistic Regression	| Support Vector Classifier	| Decision Tree | Random Forest	| XGBoost	| Best Performing Classifer |
+| Metric | Logistic Regression	| Support Vector Classifier	| Decision Tree | Random Forest	| XGBoost	| MultiLayer Perceptron | Best Performing Classifer |
 | :------ | :------ | :------ | :------ | :------ | :------ | :------ |
-| Precision | 0.897975	| 0.889951	| 0.919356	| 0.920504	| 0.921915	| XGBoost |
-| Recall	| 0.974013	| 0.983700	| 0.913391	| 0.966392	| 0.969396	| Support Vector Classifier |
-| F1 Score	| 0.934442	| 0.934476	| 0.916358	| 0.942883	| 0.945053	| XGBoost |
+| Precision | 0.897975	| 0.889951	| 0.919356	| 0.920504	| 0.921915	| 0.910812 | XGBoost |
+| Recall	| 0.974013	| 0.983700	| 0.913391	| 0.966392	| 0.969396	| 0.942320 | Support Vector Classifier |
+| F1 Score	| 0.934442	| 0.934476	| 0.916358	| 0.942883	| 0.945053	| 0.931566 | XGBoost |
 
 Perhaps unsurprisingly XGBoost performs best in both Precision and F1 Score, and is third placed for Recall. We'll move forward with XGBoost, especially given its known pedigree.
 
@@ -122,8 +124,8 @@ With these two hyperparameter searches carried out, the final predictive model c
 
 | | precision | recall | f1-score | sample count |
 | :-- | :-- | :-- | :-- | :-- |
-| successful | 0.97  | 0.83 | 0.89 | 122517 |
 | unsuccessful | 0.40 | 0.83 | 0.54 | 16746 |
+| successful | 0.97  | 0.83 | 0.89 | 122517 |
 | accuracy | | | 0.83 | 139263 |
 | macro avg | 0.69 | 0.83 | 0.72 | 139263 |
 | weighted avg | 0.90 | 0.83 | 0.85 | 139263 |
@@ -142,8 +144,8 @@ The value which gives roughly equal precision and recall is a threshold of 0.2, 
 
 | Class | Precision | Recall | F1-Score | Sample Count |
 | :-- | :-- | :-- | :-- | :-- |
-| Successful | 0.94  | 0.95 | 0.95 | 122517 |
 | Unsuccessful | 0.60 | 0.59 | 0.59 | 16746 |
+| Successful | 0.94  | 0.95 | 0.95 | 122517 |
 | Metric | :-- | :-- | :-- | :-- |
 | Accuracy | | | 0.90 | 139263 |
 | Macro Avg | 0.77 | 0.77 | 0.77 | 139263 |
